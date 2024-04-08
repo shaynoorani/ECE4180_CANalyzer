@@ -28,7 +28,7 @@ namespace WindowsAppCanalyzer
             }
             else
             {
-                // Do nothing or handle cancellation
+                MessageBox.Show("I guess you didn't want to send it afterall", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
