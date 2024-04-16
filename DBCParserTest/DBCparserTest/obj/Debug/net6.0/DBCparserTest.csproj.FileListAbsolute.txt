@@ -1,0 +1,5 @@
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Debug\net6.0\DBCparserTest.csproj.AssemblyReference.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Debug\net6.0\DBCparserTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Debug\net6.0\DBCparserTest.AssemblyInfoInputs.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Debug\net6.0\DBCparserTest.AssemblyInfo.cs
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Debug\net6.0\DBCparserTest.csproj.CoreCompileInputs.cache

@@ -1,0 +1,17 @@
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DBCparserTest.exe
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DBCparserTest.deps.json
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DBCparserTest.runtimeconfig.json
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DBCparserTest.dll
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DBCparserTest.pdb
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\bin\Release\net6.0-windows\DbcParserLib.dll
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.csproj.AssemblyReference.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.AssemblyInfoInputs.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.AssemblyInfo.cs
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.csproj.CoreCompileInputs.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.csproj.CopyComplete
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.dll
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\refint\DBCparserTest.dll
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.pdb
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\DBCparserTest.genruntimeconfig.cache
+C:\Users\egalluzzi3\source\repos\DBCParserTest\DBCparserTest\obj\Release\net6.0-windows\ref\DBCparserTest.dll

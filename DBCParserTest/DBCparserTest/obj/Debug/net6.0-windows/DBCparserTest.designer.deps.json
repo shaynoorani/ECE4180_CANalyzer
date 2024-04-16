@@ -1,0 +1,28 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DbcParserLib/1.6.0": {
+        "runtime": {
+          "lib/net6.0/DbcParserLib.dll": {
+            "assemblyVersion": "1.6.0.0",
+            "fileVersion": "1.6.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DbcParserLib/1.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PIYu9Iz6s7iAOCmREtSkGihbIZKvfUpPl/EIggC2Ui4P4i4GPju4TrXg51lFk8oYqcplvN4buyEBDDIJ/MvPXQ==",
+      "path": "dbcparserlib/1.6.0",
+      "hashPath": "dbcparserlib.1.6.0.nupkg.sha512"
+    }
+  }
+}
