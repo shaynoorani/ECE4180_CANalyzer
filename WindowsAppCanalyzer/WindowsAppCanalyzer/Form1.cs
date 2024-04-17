@@ -13,7 +13,7 @@ namespace WindowsAppCanalyzer
         bool fileLoaded = false;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
-        private int load = 0;
+        private int load = 100;
 
         public Form1()
         {
@@ -178,7 +178,10 @@ namespace WindowsAppCanalyzer
 
         }
         private void UpdateProgressBar(int loadValue)
-        {
+        {   if (loadValue > 100)
+            {
+                loadValue = 100;
+            }
             progressBar1.Value = loadValue;
             label3.Text = $"Load: {loadValue}%"; // Updates the label with the load value
         }

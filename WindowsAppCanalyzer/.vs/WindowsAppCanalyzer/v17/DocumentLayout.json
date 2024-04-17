@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|c:\\users\\shayn\\onedrive\\documents\\github\\ece4180_canalyzer\\windowsappcanalyzer\\windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
               "ToolTip": "C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAawCAAAAAiAAAA",
+              "ViewState": "AQIAAKUAAAAAAAAAAIA9wLYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T16:16:55.63Z",
               "IsPinned": true,
@@ -36,7 +36,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\shayn\\OneDrive\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
