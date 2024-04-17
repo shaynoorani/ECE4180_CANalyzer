@@ -9,6 +9,7 @@ namespace WindowsAppCanalyzer
     public partial class Form1 : Form
     {
         bool comReady = false;
+        bool fileLoaded = false;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
 
@@ -50,27 +51,34 @@ namespace WindowsAppCanalyzer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string hexPattern = "^[0-9A-Fa-f]{3}$";
-            if (Regex.IsMatch(textBox2.Text,hexPattern)) // checks to make sure its a 3 digit hex 
-            {      
-                // Display a confirmation dialog
-                DialogResult result = MessageBox.Show("Are you sure you want to send this message?", "Warning! Sending incorrect messages can be fatal", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                // Check the user's choice
-                if (result == DialogResult.Yes)
-                {
-                    // Send the message (you can add your logic here)
-                    MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("I guess you didn't want to send it afterall", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-            else // Incorrect CAN ID
+            if(!comReady)
             {
-                DialogResult result = MessageBox.Show("Make sure the CAN ID is the right length it should be 3 digits of HEX ex) FFF, 001 ect.", "CAN ID not correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("You must initilize COM port first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else
+            {
+
+                string hexPattern = "^[0-9A-Fa-f]{3}$";
+                if (Regex.IsMatch(textBox2.Text, hexPattern)) // checks to make sure its a 3 digit hex 
+                {
+                    // Display a confirmation dialog
+                    DialogResult result = MessageBox.Show("Are you sure you want to send this message?", "Warning! Sending incorrect messages can be fatal", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    // Check the user's choice
+                    if (result == DialogResult.Yes)
+                    {
+                        // Send the message (you can add your logic here)
+                        MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("I guess you didn't want to send it afterall", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else // Incorrect CAN ID
+                {
+                    DialogResult result = MessageBox.Show("Make sure the CAN ID is the right length it should be 3 digits of HEX ex) FFF, 001 ect.", "CAN ID not correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
    
         }
@@ -127,6 +135,8 @@ namespace WindowsAppCanalyzer
             {
                 string filePath = openFileDialog.FileName;
                 MessageBox.Show($"File selected: {filePath}", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                fileLoaded = true;
+
             }
         }
     }
