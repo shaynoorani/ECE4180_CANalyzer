@@ -3,16 +3,30 @@ using System.IO.Ports;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-bool comReady = false;
+
 namespace WindowsAppCanalyzer
 {
     public partial class Form1 : Form
     {
+        bool comReady = false;
+        private static SerialPort mySerialPort;
+        private OpenFileDialog openFileDialog;
+
         public Form1()
         {
             InitializeComponent();
             PopulateSerialPortComboBox();
             PopulateBaudRateComboBox();
+            InitializeOpenFileDialog();
+
+        }
+        private void InitializeOpenFileDialog()
+        {
+            openFileDialog = new OpenFileDialog
+            {
+                Title = "Select a DBC file",
+                Filter = "DBC files (*.dbc)|*.dbc|All files (*.*)|*.*"
+            };
         }
         private void PopulateSerialPortComboBox()
         {
@@ -72,20 +86,47 @@ namespace WindowsAppCanalyzer
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             if(comboBoxCOMPorts.SelectedIndex == -1)
             {
-                MessageBox.Show("No COM Port selected", "Error", MessageBoxButtons.ok, MessageBoxIcon.Warning);
+                MessageBox.Show("No COM Port selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } else
             {
                 if (comboBoxBaudRates.SelectedIndex == -1)
                 {
-                    MessageBox.Show("You must select the baud rate (you probably want 9600)", "Error", MessageBoxButtons.ok, MessageBoxIcon.Warning);
+                    MessageBox.Show("You must select the baud rate (you probably want 9600)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } else
                 {
                     // this part means that the comboBox is chilling
                     comReady = true;
-                    
+                    mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
+                    {
+                        BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem),
+                        Parity = Parity.None,
+                        StopBits = StopBits.One,
+                        DataBits = 8,
+                        Handshake = Handshake.None
+                    };
+
+                    try
+                    {
+                        mySerialPort.Open();
+                        MessageBox.Show("Port opened successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Failed to open serial port: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+            }
+        }
+
+        private void dbcButton_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                MessageBox.Show($"File selected: {filePath}", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

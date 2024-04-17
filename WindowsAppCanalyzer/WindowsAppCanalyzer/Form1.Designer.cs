@@ -33,7 +33,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxBaudRates = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dbcButton = new System.Windows.Forms.Button();
             this.Serial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -81,14 +81,15 @@
             this.comboBoxBaudRates.Size = new System.Drawing.Size(121, 28);
             this.comboBoxBaudRates.TabIndex = 5;
             // 
-            // button2
+            // dbcButton
             // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dbcButton.Location = new System.Drawing.Point(12, 25);
+            this.dbcButton.Name = "dbcButton";
+            this.dbcButton.Size = new System.Drawing.Size(107, 56);
+            this.dbcButton.TabIndex = 6;
+            this.dbcButton.Text = "DBC FILE";
+            this.dbcButton.UseVisualStyleBackColor = true;
+            this.dbcButton.Click += new System.EventHandler(this.dbcButton_Click);
             // 
             // Serial
             // 
@@ -106,7 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 562);
             this.Controls.Add(this.Serial);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dbcButton);
             this.Controls.Add(this.comboBoxBaudRates);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -126,7 +127,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxBaudRates;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button dbcButton;
         private System.Windows.Forms.Button Serial;
     }
 }
