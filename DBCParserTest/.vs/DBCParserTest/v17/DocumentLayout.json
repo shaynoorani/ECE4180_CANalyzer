@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\",
+  "WorkspaceRootPath": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\onedrive - georgia institute of technology\\dbcparsertest\\dbcparsertest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\documents\\github\\ece4180_canalyzer\\dbcparsertest\\dbcparsertest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|solutionrelative:dbcparsertest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\onedrive - georgia institute of technology\\dbcparsertest\\dbcparsertest\\dbcparsertest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\documents\\github\\ece4180_canalyzer\\dbcparsertest\\dbcparsertest\\dbcparsertest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|solutionrelative:dbcparsertest\\dbcparsertest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\onedrive - georgia institute of technology\\dbcparsertest\\dbcparsertest\\dbcparsertest.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|c:\\users\\eric\\documents\\github\\ece4180_canalyzer\\dbcparsertest\\dbcparsertest\\dbcparsertest.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{111F5FA7-CF4C-4364-91E2-A0832CACF469}|DBCparserTest\\DBCparserTest.csproj|solutionrelative:dbcparsertest\\dbcparsertest.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -32,23 +32,22 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "DBCparserTest",
-              "DocumentMoniker": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
+              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
               "RelativeDocumentMoniker": "DBCparserTest\\DBCparserTest.csproj",
-              "ToolTip": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
+              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
               "RelativeToolTip": "DBCparserTest\\DBCparserTest.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-16T00:46:11.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T00:46:11.915Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\Program.cs",
               "RelativeDocumentMoniker": "DBCparserTest\\Program.cs",
-              "ToolTip": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\Program.cs",
+              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\Program.cs",
               "RelativeToolTip": "DBCparserTest\\Program.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAIAwwEEAAABWAAAA",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAADIAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T00:46:12.064Z",
               "EditorCaption": ""
@@ -57,14 +56,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DBCparserTest.csproj",
-              "DocumentMoniker": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
+              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
               "RelativeDocumentMoniker": "DBCparserTest\\DBCparserTest.csproj",
-              "ToolTip": "C:\\Users\\Eric\\OneDrive - Georgia Institute of Technology\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
+              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\DBCParserTest\\DBCparserTest\\DBCparserTest.csproj",
               "RelativeToolTip": "DBCparserTest\\DBCparserTest.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-16T00:46:12.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T00:46:12.068Z"
             }
           ]
         }

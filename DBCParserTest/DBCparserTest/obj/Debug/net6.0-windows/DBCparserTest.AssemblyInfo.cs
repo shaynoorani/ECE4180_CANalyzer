@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DBCparserTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+327ac9e6fc539c176eb35c3e09d342b321c472ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("DBCparserTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DBCparserTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

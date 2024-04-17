@@ -6,6 +6,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 class Program
 {
+    private static SerialPort mySerialPort;
     static void Main(string[] args)
     {
         //string dbcFilePath = "C:\\Users\\egalluzzi3\\Downloads\\tesla_can.dbc";
@@ -32,18 +33,19 @@ class Program
             ulong TxMsg = Packer.TxSignalPack(-34.3, sig);
             double val = Packer.RxSignalUnpack(TxMsg, sig);
             Console.WriteLine($"{val}");
-            SerialPort mySerialPort = new SerialPort("COM8");
+            mySerialPort = new SerialPort("COM8");
             mySerialPort.BaudRate = 9600;
             mySerialPort.Parity = Parity.None;
             mySerialPort.StopBits = StopBits.One;
             mySerialPort.DataBits = 8;
             mySerialPort.Handshake = Handshake.None;
             //mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
+            Console.CancelKeyPress += new ConsoleCancelEventHandler(Console_CancelKeyPress);
             mySerialPort.Open();
-            
+
             while (true)
             {
+                
                 try
                 {
                     if (!mySerialPort.IsOpen)
@@ -74,18 +76,19 @@ class Program
                                     break;
                                 }
                             }
-                        } 
-                        
+                        }
 
+                        
                         Thread.Sleep(10);
                     }
                 }catch (Exception ex)
                 {
+
                    Console.WriteLine($"Error parsing DBC fle: {ex.Message}");
                 }
                 
             }
-            mySerialPort.Close();
+            
 
 
 
@@ -102,4 +105,18 @@ class Program
         string indata = sp.ReadExisting();
         Console.WriteLine(indata);
     }
+    private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
+    {
+        // Handle CTRL+C by closing the serial port
+        if (mySerialPort != null && mySerialPort.IsOpen)
+        {
+            mySerialPort.Close();
+            Console.WriteLine($"Serial port {mySerialPort.PortName} closed.");
+        }
+
+        // Exit the application gracefully
+        Environment.Exit(0); // Optional: Exit with a specific code (0 for success)
+    }
+
+
 }
