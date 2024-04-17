@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+//using DbcParserLib;
 
 
 namespace WindowsAppCanalyzer
@@ -12,6 +13,7 @@ namespace WindowsAppCanalyzer
         bool fileLoaded = false;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
+        private int load = 0;
 
         public Form1()
         {
@@ -28,6 +30,7 @@ namespace WindowsAppCanalyzer
                 Title = "Select a DBC file",
                 Filter = "DBC files (*.dbc)|*.dbc|All files (*.*)|*.*"
             };
+            UpdateProgressBar(load);
         }
         private void PopulateSerialPortComboBox()
         {
@@ -135,9 +138,54 @@ namespace WindowsAppCanalyzer
             {
                 string filePath = openFileDialog.FileName;
                 MessageBox.Show($"File selected: {filePath}", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                fileLoaded = true;
+                try {
+                    
+                    //Dbc dbc = Parser.ParseFromPath(filePath);
+                   // fileLoaded = true;
+                   fileLoaded = true;
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Error in DBC file Parsing");
+                }
+                
+                
 
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void UpdateProgressBar(int loadValue)
+        {
+            progressBar1.Value = loadValue;
+            label3.Text = $"Load: {loadValue}%"; // Updates the label with the load value
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
