@@ -3,6 +3,7 @@ using System.IO.Ports;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
+bool comReady = false;
 namespace WindowsAppCanalyzer
 {
     public partial class Form1 : Form
@@ -67,6 +68,25 @@ namespace WindowsAppCanalyzer
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(comboBoxCOMPorts.SelectedIndex == -1)
+            {
+                MessageBox.Show("No COM Port selected", "Error", MessageBoxButtons.ok, MessageBoxIcon.Warning);
+            } else
+            {
+                if (comboBoxBaudRates.SelectedIndex == -1)
+                {
+                    MessageBox.Show("You must select the baud rate (you probably want 9600)", "Error", MessageBoxButtons.ok, MessageBoxIcon.Warning);
+                } else
+                {
+                    // this part means that the comboBox is chilling
+                    comReady = true;
+                    
+                }
+            }
         }
     }
 }
