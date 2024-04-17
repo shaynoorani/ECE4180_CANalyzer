@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace WindowsAppCanalyzer
@@ -8,8 +9,24 @@ namespace WindowsAppCanalyzer
         public Form1()
         {
             InitializeComponent();
+            PopulateSerialPortComboBox();
+            PopulateBaudRateComboBox();
+        }
+        private void PopulateSerialPortComboBox()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            comboBoxCOMPorts.Items.AddRange(ports);
         }
 
+
+        private void PopulateBaudRateComboBox()
+        {
+            int[] baudRates = new int[] { 9600, 19200, 38400, 57600, 115200 };
+            foreach (int rate in baudRates)
+            {
+                comboBoxBaudRates.Items.Add(rate);
+            }
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
