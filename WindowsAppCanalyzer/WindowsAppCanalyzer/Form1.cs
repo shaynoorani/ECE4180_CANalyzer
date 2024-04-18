@@ -259,7 +259,7 @@ namespace WindowsAppCanalyzer
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error during data reception: {ex.Message}", "Serial Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show($"Error during data reception: {ex.Message}", "Serial Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (!mySerialPort.IsOpen)
                 {
                     ConfigureSerialPort();
