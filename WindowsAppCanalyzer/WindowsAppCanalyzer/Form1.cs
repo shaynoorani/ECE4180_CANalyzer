@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.Ports;
+using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 //using DbcParserLib;
@@ -247,15 +248,33 @@ namespace WindowsAppCanalyzer
 
             mySerialPort.DataReceived += mySerialPort_DataReceived;
         }
+        private bool checkLoadMessage(string data)
+        {
+            var match = Regex.Match(data, @"The can load is: (\d+)%");
+            if (match.Success)
+            {
+                // Parse the number from the first capturing group
+                if (int.TryParse(match.Groups[1].Value, out int newLoad))
+                {
+                    load = newLoad; // Update the global load variable
+                    UpdateProgressBar(load); // Update the progress bar accordingly
+                }
+            }
+            return !(match.Success);
+        }
+        
         private void mySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             try
             {
                 string inData = mySerialPort.ReadLine();
-                Invoke((MethodInvoker)delegate
+                if(checkLoadMessage(inData))
                 {
-                    DisplayData(inData); // Safely update the UI from the UI thread
-                });
+                    Invoke((MethodInvoker)delegate
+                    {
+                        DisplayData(inData); // Safely update the UI from the UI thread
+                    });
+                }
             }
             catch (Exception ex)
             {
