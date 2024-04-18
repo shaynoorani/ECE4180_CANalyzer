@@ -13,7 +13,8 @@ namespace WindowsAppCanalyzer
         bool fileLoaded = false;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
-        private int load = 100;
+        private int load = 80;
+
 
         public Form1()
         {
@@ -21,7 +22,28 @@ namespace WindowsAppCanalyzer
             PopulateSerialPortComboBox();
             PopulateBaudRateComboBox();
             InitializeOpenFileDialog();
+            UpdateAll();
+        }
+        private void UpdateAll()
+        {
+            UpdateProgressBar(load);
+            if(comReady & !fileLoaded)
+            {
+                //raw output
 
+            } else
+            {
+                if(comReady)
+                {
+                    //Parse DBC output
+                }
+            }
+        }
+        private void DisplayData(string text)
+        {
+
+                textBoxSerialData.AppendText(text + Environment.NewLine);
+                textBoxSerialData.ScrollToCaret();
         }
         private void InitializeOpenFileDialog()
         {
@@ -108,17 +130,8 @@ namespace WindowsAppCanalyzer
                     MessageBox.Show("You must select the baud rate (you probably want 9600)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } else
                 {
+                    ConfigureSerialPort();
                     // this part means that the comboBox is chilling
-                    comReady = true;
-                    mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
-                    {
-                        BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem),
-                        Parity = Parity.None,
-                        StopBits = StopBits.One,
-                        DataBits = 8,
-                        Handshake = Handshake.None
-                    };
-
                     try
                     {
                         mySerialPort.Open();
@@ -126,6 +139,7 @@ namespace WindowsAppCanalyzer
                     }
                     catch (Exception ex)
                     {
+                        mySerialPort.Close();
                         MessageBox.Show($"Failed to open serial port: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -189,6 +203,40 @@ namespace WindowsAppCanalyzer
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ConfigureSerialPort()
+        {
+
+            comReady = true;
+            mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
+            {
+                BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem),
+                Parity = Parity.None,
+                StopBits = StopBits.One,
+                DataBits = 8,
+                Handshake = Handshake.None
+            };
+        }
+        private void mySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try
+            {
+                string inData = mySerialPort.ReadLine();
+                DisplayData(inData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during data reception: {ex.Message}", "Serial Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!mySerialPort.IsOpen)
+                {
+                    ConfigureSerialPort();
+                }
+            }
         }
     }
 }

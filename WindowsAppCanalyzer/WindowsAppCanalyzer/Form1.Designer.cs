@@ -40,6 +40,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxSerialData = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // comboBoxCOMPorts
@@ -154,12 +155,22 @@
             this.label3.Text = "Load  0%";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // textBoxSerialData
+            // 
+            this.textBoxSerialData.Location = new System.Drawing.Point(189, 117);
+            this.textBoxSerialData.Name = "textBoxSerialData";
+            this.textBoxSerialData.Size = new System.Drawing.Size(616, 271);
+            this.textBoxSerialData.TabIndex = 14;
+            this.textBoxSerialData.Text = "";
+            this.textBoxSerialData.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1028, 489);
+            this.Controls.Add(this.textBoxSerialData);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.progressBar1);
@@ -194,6 +205,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox textBoxSerialData;
     }
 }
 
