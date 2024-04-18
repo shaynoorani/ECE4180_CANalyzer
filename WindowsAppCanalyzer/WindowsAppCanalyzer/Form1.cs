@@ -13,7 +13,7 @@ namespace WindowsAppCanalyzer
         bool fileLoaded = false;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
-        private int load = 80;
+        private int load = 0;
 
 
         public Form1()
@@ -41,9 +41,20 @@ namespace WindowsAppCanalyzer
         }
         private void DisplayData(string text)
         {
-
+            if (textBoxSerialData.InvokeRequired) // used to not get that threading error
+            {
+                textBoxSerialData.Invoke(new MethodInvoker(delegate
+                {
+                    textBoxSerialData.AppendText(text + Environment.NewLine);
+                    textBoxSerialData.ScrollToCaret();
+                }));
+            }
+            else
+            {
                 textBoxSerialData.AppendText(text + Environment.NewLine);
                 textBoxSerialData.ScrollToCaret();
+            }
+
         }
         private void InitializeOpenFileDialog()
         {
@@ -102,7 +113,7 @@ namespace WindowsAppCanalyzer
                 }
                 else // Incorrect CAN ID
                 {
-                    DialogResult result = MessageBox.Show("Make sure the CAN ID is the right length it should be 3 digits of HEX ex) FFF, 001 ect.", "CAN ID not correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Make sure the CAN ID is the right length it should be 3 digits of HEX ex) FFF, 001 ect.", "CAN ID not correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
    
@@ -116,19 +127,19 @@ namespace WindowsAppCanalyzer
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void runPressed()
         {
-
-            if(comboBoxCOMPorts.SelectedIndex == -1)
+            if (comboBoxCOMPorts.SelectedIndex == -1)
             {
                 MessageBox.Show("No COM Port selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } else
+            }
+            else
             {
                 if (comboBoxBaudRates.SelectedIndex == -1)
                 {
                     MessageBox.Show("You must select the baud rate (you probably want 9600)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                } else
+                }
+                else
                 {
                     ConfigureSerialPort();
                     // this part means that the comboBox is chilling
@@ -144,6 +155,10 @@ namespace WindowsAppCanalyzer
                     }
                 }
             }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            runPressed();
         }
 
         private void dbcButton_Click(object sender, EventArgs e)
@@ -211,7 +226,15 @@ namespace WindowsAppCanalyzer
         }
         private void ConfigureSerialPort()
         {
-
+            if (mySerialPort != null)
+            {
+                if (mySerialPort.IsOpen)
+                {
+                    mySerialPort.DataReceived -= mySerialPort_DataReceived;
+                    mySerialPort.Close();
+                }
+                mySerialPort.Dispose(); // Optional based on your application needs
+            }
             comReady = true;
             mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
             {
@@ -221,13 +244,18 @@ namespace WindowsAppCanalyzer
                 DataBits = 8,
                 Handshake = Handshake.None
             };
+
+            mySerialPort.DataReceived += mySerialPort_DataReceived;
         }
         private void mySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             try
             {
                 string inData = mySerialPort.ReadLine();
-                DisplayData(inData);
+                Invoke((MethodInvoker)delegate
+                {
+                    DisplayData(inData); // Safely update the UI from the UI thread
+                });
             }
             catch (Exception ex)
             {
@@ -236,6 +264,29 @@ namespace WindowsAppCanalyzer
                 {
                     ConfigureSerialPort();
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            runPressed();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (comReady)
+            {
+                comReady = false;
+                if (mySerialPort != null)
+                {
+                    if (mySerialPort.IsOpen)
+                    {
+                        mySerialPort.DataReceived -= mySerialPort_DataReceived;
+                        mySerialPort.Close();
+                    }
+                    mySerialPort.Dispose(); // Optional based on your application needs
+                }
+
             }
         }
     }
