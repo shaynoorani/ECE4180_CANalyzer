@@ -1,5 +1,6 @@
 # CANalyzer - Frugal CAN Line Analyzer with a C# GUI
 - Brendan Bassett, Carl Cort, Eric Galluzi, Shayan Noorani, Tiancheng Zhao
+- Throughout this page, there are links to the section of the main github repo [shaynoorani/ECE4180_CANalyzer](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main) that correspond to the given component. Navigate to those to see the exact implementations
 
 ## Description
 - CAN Line Analyzer for easy access to CAN data
@@ -21,13 +22,29 @@
 ### Wiring Diagram
 ! Brendan's Wiring Diagram
 
-## Software
-### Mbed
-! CAN passthrough and initial parser
+### [Housing](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/Housing) (Optional)
+- The housing was developed to make the device more rugged for practical use but is not required for functionality
+- As such, this section is presented to show not only our final design but also the measurements of the underlying device so that a different housing ould be developed if desired
 
-### C# GUI and Load Analyzer 
-?Is the load analyzer in C# or on the Mbed?
-! GUI Code (if very long maybe instead call out the key parts and link to the parts of the github with htem)
+#### Embedded Device Dimensions
+
+
+[<img alt="Dimensions of relavent parts of the embedded device for designing the housing." width="40px" src="CANAlyzer Dimensions and Initial Housing Design.png">](https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing)
+
+## Software
+- The Software is broken up into three key units: the Mbed-based CAN load calculator and CAN message passthrough, the C#-based DBC Message parser, and the C# GUI.
+- The messages are first read across a serial connection from the CAN transducer to the mbed where they are either tallied to calculate CAN load or passed-through the USB virtual COM port to the computer for use in the DBC Parser and Gui
+- The DBC parser reads the CAN messages sent by the mbed and packages them in structs that delineate the messages and segments the data into the message components
+- Finally, the GUI displays the CAN message in an easily read format and allows for filtering of messages based on ID  
+
+### Mbed - CAN Load Calculator & Message Passthrough
+! Andy's Code - highlight sections of code if necessary/beneficial, describe functionality, and especially mention how it avoids losing parts of CAN messages through calculation and sending cycles.
+
+### [DBC Parser](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/DBCParserTest)
+! Eric's Parser (probably just highlight functionality and then link to the code if it is long)
+
+### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
+! Shay's GUI Code (probably just highlight functionality and then link to the code if it is long)
 
 ## Usage
 ! POPULATE WITH HOW TO USE THE CANalyzer
