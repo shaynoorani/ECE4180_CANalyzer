@@ -1,3 +1,5 @@
+I was somewhat modeling ours off of this one: https://github.com/MufuteeVC/web-programmable-dslr-intervalometer and in general the other ones on Hamblen's sight: https://hamblen.ece.gatech.edu/489X/projects/S19_projs.htm
+
 # CANalyzer - Frugal CAN Line Analyzer with a C# GUI
 - Brendan Bassett, Carl Cort, Eric Galluzi, Shayan Noorani, Tiancheng Zhao
 - Throughout this page, there are links to the section of the main github repo [shaynoorani/ECE4180_CANalyzer](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main) that correspond to the given component. Navigate to those to see the exact implementations
