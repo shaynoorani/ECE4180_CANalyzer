@@ -19,7 +19,7 @@
   - Simply used as a breakout for the CAN Transducer for use on a breadboard
 - [Breadboard](https://www.digikey.com/en/products/detail/universal-solder-electronics-ltd/SOLDERLESS%2520BREADBOARD%2520400/16819785?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax_DK%2BProduct_Product%20Categories%20-%20Top%2015&utm_term=&utm_content=&utm_id=go_cmp-19646629144_adg-_ad-__dev-c_ext-_prd-16819785_sig-Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB&gad_source=1&gclid=Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB)
 - Housing (optional)
-- Molex connector (optional)
+- Male Molex Connector (optional)
 
 ### [Electronics](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/schematic)
 
