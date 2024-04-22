@@ -29,7 +29,9 @@
 #### Embedded Device Dimensions
 
 
-[<img alt="Dimensions of relavent parts of the embedded device for designing the housing." width="40px" src="CANAlyzer Dimensions and Initial Housing Design.png">](https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing)
+<img alt="Dimensions of relavent parts of the embedded device for designing the housing." width="400px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing/CANAlyzer%20Dimensions%20and%20Initial%20Housing%20Design.png?raw=true">
+
+
 
 ## Software
 - The Software is broken up into three key units: the Mbed-based CAN load calculator and CAN message passthrough, the C#-based DBC Message parser, and the C# GUI.
