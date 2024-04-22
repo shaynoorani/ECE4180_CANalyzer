@@ -19,6 +19,7 @@
   - Simply used as a breakout for the CAN Transducer for use on a breadboard
 - [Breadboard](https://www.digikey.com/en/products/detail/universal-solder-electronics-ltd/SOLDERLESS%2520BREADBOARD%2520400/16819785?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax_DK%2BProduct_Product%20Categories%20-%20Top%2015&utm_term=&utm_content=&utm_id=go_cmp-19646629144_adg-_ad-__dev-c_ext-_prd-16819785_sig-Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB&gad_source=1&gclid=Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB)
 - Housing (optional)
+- Molex connector (optional)
 
 ### [Electronics](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/schematic)
 
@@ -38,7 +39,7 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 #### Embedded Device Dimensions
 <img alt="Dimensions of relavent parts of the embedded device for designing the housing" width="750px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing/CANAlyzer%20Dimensions%20and%20Initial%20Housing%20Design.png?raw=true">
 
-*The CAN lines no longer come out as 3 lines but as one bundled wired that interfaces with the molex connector
+*The CAN lines no longer come out as 3 lines but as one bundled wire that are terminated with a male molex connector since our car's CAN was accessible via a female molex
 
 #### Final Housing Design
 <img alt="" width="650px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing/Yellow%20CANalyzer%20Housing.png?raw=true">
