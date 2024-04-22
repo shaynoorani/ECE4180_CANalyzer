@@ -11,7 +11,7 @@
 ## Functionality Demo
 
 
-## Hardware Setup
+## Hardware
 ### Parts
 - (x1) [Mbed](https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/general-purpose-mcus/lpc1700-arm-cortex-m3/arm-mbed-lpc1768-board:OM11043)
 - (x1) [CAN Transducer](https://www.trustedparts.com/en/part/texas-instruments/TCAN1051HDRQ1?gad_source=1&gclid=Cj0KCQjwlZixBhCoARIsAIC745BS6Yo-jjP46UWuMqcR6n9Xm2Zw-S1keO-JjT2n29nrR9FZASSHz-4aAnRbEALw_wcB)
