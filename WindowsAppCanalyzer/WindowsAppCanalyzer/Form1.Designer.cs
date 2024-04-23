@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.comboBoxCOMPorts = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxBaudRates = new System.Windows.Forms.ComboBox();
@@ -43,6 +42,7 @@
             this.textBoxSerialData = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxCOMPorts
@@ -53,36 +53,25 @@
             this.comboBoxCOMPorts.Name = "comboBoxCOMPorts";
             this.comboBoxCOMPorts.Size = new System.Drawing.Size(143, 24);
             this.comboBoxCOMPorts.TabIndex = 1;
-            
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(344, 606);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "MESSAGE";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(206, 606);
+            this.textBox2.Location = new System.Drawing.Point(381, 606);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(76, 22);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "CAN ID";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(705, 591);
+            this.button1.Location = new System.Drawing.Point(475, 599);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 37);
             this.button1.TabIndex = 4;
-            this.button1.Text = "SEND";
+            this.button1.Text = "FILTER";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -94,7 +83,6 @@
             this.comboBoxBaudRates.Name = "comboBoxBaudRates";
             this.comboBoxBaudRates.Size = new System.Drawing.Size(108, 24);
             this.comboBoxBaudRates.TabIndex = 5;
-            
             // 
             // dbcButton
             // 
@@ -199,12 +187,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(571, 599);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(88, 37);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "CLEAR";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(914, 639);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxSerialData);
@@ -218,7 +218,6 @@
             this.Controls.Add(this.comboBoxBaudRates);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBoxCOMPorts);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -232,7 +231,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxCOMPorts;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxBaudRates;
@@ -246,6 +244,7 @@
         private System.Windows.Forms.RichTextBox textBoxSerialData;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

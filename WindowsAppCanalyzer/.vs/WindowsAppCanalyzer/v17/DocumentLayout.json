@@ -32,11 +32,15 @@
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
               "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs",
-              "ViewState": "AQIAAP8AAAAAAAAAAAAgwBgBAAARAAAA",
+              "ViewState": "AQIAACEBAAAAAAAAAAAwwDgBAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T16:16:55.63Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -48,11 +52,7 @@
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T15:59:57.196Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -62,9 +62,10 @@
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.Designer.cs",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.Designer.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAgwGAAAAAMAAAA",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T01:39:07.975Z"
+              "WhenOpened": "2024-04-23T01:39:07.975Z",
+              "EditorCaption": ""
             }
           ]
         }

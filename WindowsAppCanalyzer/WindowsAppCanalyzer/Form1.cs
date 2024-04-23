@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -18,10 +19,12 @@ namespace WindowsAppCanalyzer
     {
         bool comReady = false;
         bool fileLoaded = false;
+
         private static Dbc dbc;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
         private int load = 0;
+        private uint filter = 0xFFF;
         
 
 
@@ -98,42 +101,26 @@ namespace WindowsAppCanalyzer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!comReady)
-            {
-                MessageBox.Show("You must initilize COM port first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } else
-            {
+            
 
                 string hexPattern = "^[0-9A-Fa-f]{3}$";
                 if (Regex.IsMatch(textBox2.Text, hexPattern)) // checks to make sure its a 3 digit hex 
                 {
-                    // Display a confirmation dialog
-                    DialogResult result = MessageBox.Show("Are you sure you want to send this message?", "Warning! Sending incorrect messages can be fatal", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    // set filter
+                    filter = Convert.ToUInt32(textBox2.Text,16);
 
-                    // Check the user's choice
-                    if (result == DialogResult.Yes)
-                    {
-                        // Send the message (you can add your logic here)
-                        
-                        MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("I guess you didn't want to send it afterall", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    
 
                 }
                 else // Incorrect CAN ID
                 {
                     MessageBox.Show("Make sure the CAN ID is the right length it should be 3 digits of HEX ex) FFF, 001 ect.", "CAN ID not correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-            }
+            
    
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
+       
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -191,7 +178,7 @@ namespace WindowsAppCanalyzer
                 try {
                     
                     dbc = Parser.ParseFromPath(filePath);
-                    fileLoaded = true; fileLoaded = true;
+                    fileLoaded = true;
                 } catch (Exception ex)
                 {
                     MessageBox.Show("Error in DBC file Parsing");
@@ -310,7 +297,8 @@ namespace WindowsAppCanalyzer
                         foreach(var message in dbc.Messages)
                         {
                             uint id = uint.Parse(dataParts[0], System.Globalization.NumberStyles.HexNumber);
-                            if (id == message.ID)
+                        
+                            if ((filter == 0xFFF || id == filter) && id == message.ID)
                             {
                                 text += ($"Message Name: {message.Name}, Message ID: {dataParts[0]}\n");
                                 ulong txMsg = ulong.Parse(dataParts[1], System.Globalization.NumberStyles.HexNumber);
@@ -319,13 +307,14 @@ namespace WindowsAppCanalyzer
                                     double rxMsg = Packer.RxSignalUnpack(txMsg, signal);
                                     text += ($"{signal.Name} : {rxMsg}\n");
                                 }
+                                Invoke((MethodInvoker)delegate
+                                {
+                                    DisplayData(text); // Safely update the UI from the UI thread
+                                });
                                 break;
                             }
                         }
-                        Invoke((MethodInvoker)delegate
-                        {
-                            DisplayData(text); // Safely update the UI from the UI thread
-                        });
+                        
                     }
                 } else
                 {
@@ -357,27 +346,31 @@ namespace WindowsAppCanalyzer
 
                 if (mySerialPort != null && mySerialPort.IsOpen)
                 {
-                    // Invoke serial port closing operation on the UI thread
-                    Invoke((MethodInvoker)delegate
+                    // Create a new thread to close the serial port
+                    Thread closePortThread = new Thread(() =>
                     {
                         try
                         {
-                            // Close the serial port
                             mySerialPort.Close();
                             MessageBox.Show("Serial port closed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
                         {
-                            // Handle any exceptions that may occur during serial port close
                             MessageBox.Show($"Error closing serial port: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         finally
                         {
                             // Dispose of the serial port (optional based on your application needs)
-                            mySerialPort.Dispose();
-                            mySerialPort = null; // Set to null after disposal (optional)
+                            if (mySerialPort != null)
+                            {
+                                mySerialPort.Dispose();
+                                mySerialPort = null;
+                            }
                         }
                     });
+
+                    // Start the thread to close the serial port
+                    closePortThread.Start();
                 }
                 else
                 {
@@ -386,7 +379,13 @@ namespace WindowsAppCanalyzer
             }
         }
 
-       
-       
+
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            filter = 0xFFF;
+            textBox2.Text = "CAN ID";
+        }
     }
 }
