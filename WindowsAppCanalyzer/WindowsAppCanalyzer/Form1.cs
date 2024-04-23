@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO.Ports;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
@@ -7,6 +8,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using DbcParserLib;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using DbcParserLib;
 
 
@@ -20,6 +22,7 @@ namespace WindowsAppCanalyzer
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
         private int load = 0;
+        
 
 
         public Form1()
@@ -111,6 +114,7 @@ namespace WindowsAppCanalyzer
                     if (result == DialogResult.Yes)
                     {
                         // Send the message (you can add your logic here)
+                        
                         MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -149,7 +153,14 @@ namespace WindowsAppCanalyzer
                 }
                 else
                 {
-
+                    Invoke((MethodInvoker)delegate
+                    {
+                        comboBoxBaudRates.Enabled = false;
+                        comboBoxBaudRates.BackColor = Color.DarkGray;
+                        comboBoxCOMPorts.Enabled = false;
+                        comboBoxCOMPorts.BackColor = Color.DarkGray;
+                    });
+                    
                     ConfigureSerialPort();
                     // this part means that the comboBox is chilling
                     try
@@ -168,7 +179,8 @@ namespace WindowsAppCanalyzer
         private void button3_Click(object sender, EventArgs e)
         {
             runPressed();
-        }
+            
+    }
 
         private void dbcButton_Click(object sender, EventArgs e)
         {
@@ -254,16 +266,7 @@ namespace WindowsAppCanalyzer
                     DataBits = 8,
                     Handshake = Handshake.None
                 };
-            } else
-            {
-               /* if (comboBoxCOMPorts.InvokeRequired)
-                {
-                    comboBoxCOMPorts.Invoke(new MethodInvoker(delegate
-                    {
-                        mySerialPort.BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem);
-                    }));
-                }*/
-            }
+            } 
             
 
             mySerialPort.DataReceived += mySerialPort_DataReceived;
@@ -277,7 +280,11 @@ namespace WindowsAppCanalyzer
                 if (int.TryParse(match.Groups[1].Value, out int newLoad))
                 {
                     load = newLoad; // Update the global load variable
-                    UpdateProgressBar(load); // Update the progress bar accordingly
+                    Invoke((MethodInvoker)delegate
+                    {
+                        UpdateProgressBar(load); // Update the progress bar accordingly
+                    });
+                    
                 }
             }
             return !(match.Success);
@@ -320,13 +327,12 @@ namespace WindowsAppCanalyzer
                             DisplayData(text); // Safely update the UI from the UI thread
                         });
                     }
-                } else if (checkLoadMessage(inData))
+                } else
                 {
-                    Invoke((MethodInvoker)delegate
-                    {
-                        DisplayData(inData); // Safely update the UI from the UI thread
-                    });
+                    checkLoadMessage(inData);
                 }
+                
+
             }
             catch (Exception ex)
             {
@@ -380,5 +386,7 @@ namespace WindowsAppCanalyzer
             }
         }
 
+       
+       
     }
 }

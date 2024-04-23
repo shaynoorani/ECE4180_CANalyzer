@@ -53,6 +53,7 @@
             this.comboBoxCOMPorts.Name = "comboBoxCOMPorts";
             this.comboBoxCOMPorts.Size = new System.Drawing.Size(143, 24);
             this.comboBoxCOMPorts.TabIndex = 1;
+            
             // 
             // textBox1
             // 
@@ -93,6 +94,7 @@
             this.comboBoxBaudRates.Name = "comboBoxBaudRates";
             this.comboBoxBaudRates.Size = new System.Drawing.Size(108, 24);
             this.comboBoxBaudRates.TabIndex = 5;
+            
             // 
             // dbcButton
             // 

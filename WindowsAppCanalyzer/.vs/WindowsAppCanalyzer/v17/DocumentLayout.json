@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|c:\\users\\eric\\documents\\github\\ece4180_canalyzer\\windowsappcanalyzer\\windowsappcanalyzer\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4A268E46-F4A5-42EF-979C-19CBF84D4A01}|WindowsAppCanalyzer\\WindowsAppCanalyzer.csproj|solutionrelative:windowsappcanalyzer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -28,11 +32,24 @@
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
               "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs",
-              "ViewState": "AQIAAPQAAAAAAAAAAAAAAAgBAAATAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAgwHQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T16:16:55.63Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
+              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs [Design]",
+              "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T15:59:57.196Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -41,13 +58,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
-              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs [Design]",
-              "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs [Design]",
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.Designer.cs",
+              "RelativeToolTip": "WindowsAppCanalyzer\\Form1.Designer.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAgwGAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:59:57.196Z"
+              "WhenOpened": "2024-04-23T01:39:07.975Z",
+              "EditorCaption": ""
             }
           ]
         }
