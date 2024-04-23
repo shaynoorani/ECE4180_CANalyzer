@@ -2,7 +2,11 @@
 using System.IO.Ports;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using DbcParserLib;
+using static System.Net.Mime.MediaTypeNames;
 //using DbcParserLib;
 
 
@@ -12,6 +16,7 @@ namespace WindowsAppCanalyzer
     {
         bool comReady = false;
         bool fileLoaded = false;
+        private static Dbc dbc;
         private static SerialPort mySerialPort;
         private OpenFileDialog openFileDialog;
         private int load = 0;
@@ -42,17 +47,19 @@ namespace WindowsAppCanalyzer
         }
         private void DisplayData(string text)
         {
+            text = text + "\n";
             if (textBoxSerialData.InvokeRequired) // used to not get that threading error
             {
                 textBoxSerialData.Invoke(new MethodInvoker(delegate
                 {
-                    textBoxSerialData.AppendText(text + Environment.NewLine);
+                    textBoxSerialData.AppendText(text);
                     textBoxSerialData.ScrollToCaret();
                 }));
             }
             else
             {
-                textBoxSerialData.AppendText(text + Environment.NewLine);
+                
+                textBoxSerialData.AppendText(text);
                 textBoxSerialData.ScrollToCaret();
             }
 
@@ -142,6 +149,7 @@ namespace WindowsAppCanalyzer
                 }
                 else
                 {
+
                     ConfigureSerialPort();
                     // this part means that the comboBox is chilling
                     try
@@ -170,9 +178,8 @@ namespace WindowsAppCanalyzer
                 MessageBox.Show($"File selected: {filePath}", "File Loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 try {
                     
-                    //Dbc dbc = Parser.ParseFromPath(filePath);
-                   // fileLoaded = true;
-                   fileLoaded = true;
+                    dbc = Parser.ParseFromPath(filePath);
+                    fileLoaded = true; fileLoaded = true;
                 } catch (Exception ex)
                 {
                     MessageBox.Show("Error in DBC file Parsing");
@@ -234,23 +241,36 @@ namespace WindowsAppCanalyzer
                     mySerialPort.DataReceived -= mySerialPort_DataReceived;
                     mySerialPort.Close();
                 }
-                mySerialPort.Dispose(); // Optional based on your application needs
+                //mySerialPort.Dispose(); // Optional based on your application needs
             }
             comReady = true;
-            mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
+            if(mySerialPort == null)
             {
-                BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem),
-                Parity = Parity.None,
-                StopBits = StopBits.One,
-                DataBits = 8,
-                Handshake = Handshake.None
-            };
+                mySerialPort = new SerialPort(comboBoxCOMPorts.SelectedItem.ToString())
+                {
+                    BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem),
+                    Parity = Parity.None,
+                    StopBits = StopBits.One,
+                    DataBits = 8,
+                    Handshake = Handshake.None
+                };
+            } else
+            {
+               /* if (comboBoxCOMPorts.InvokeRequired)
+                {
+                    comboBoxCOMPorts.Invoke(new MethodInvoker(delegate
+                    {
+                        mySerialPort.BaudRate = Convert.ToInt32(comboBoxBaudRates.SelectedItem);
+                    }));
+                }*/
+            }
+            
 
             mySerialPort.DataReceived += mySerialPort_DataReceived;
         }
         private bool checkLoadMessage(string data)
         {
-            var match = Regex.Match(data, @"The can load is: (\d+)%");
+            var match = Regex.Match(data, @"The can load is: (\d+) %");
             if (match.Success)
             {
                 // Parse the number from the first capturing group
@@ -262,13 +282,45 @@ namespace WindowsAppCanalyzer
             }
             return !(match.Success);
         }
-        
+        private bool checkCANMessage(string data)
+        {
+            string pattern = @"^[0-9A-Fa-f]{3}!(.*)$";
+            var match = Regex.Match(data, pattern);
+            return match.Success;
+        }
         private void mySerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             try
             {
                 string inData = mySerialPort.ReadLine();
-                if(checkLoadMessage(inData))
+                
+                if (fileLoaded && checkCANMessage(inData))
+                {
+                    string[] dataParts = inData.Split('!');
+                    string text = "";
+                    if(dataParts.Length >= 2)
+                    {
+                        foreach(var message in dbc.Messages)
+                        {
+                            uint id = uint.Parse(dataParts[0], System.Globalization.NumberStyles.HexNumber);
+                            if (id == message.ID)
+                            {
+                                text += ($"Message Name: {message.Name}, Message ID: {dataParts[0]}\n");
+                                ulong txMsg = ulong.Parse(dataParts[1], System.Globalization.NumberStyles.HexNumber);
+                                foreach (var signal in message.Signals)
+                                {
+                                    double rxMsg = Packer.RxSignalUnpack(txMsg, signal);
+                                    text += ($"{signal.Name} : {rxMsg}\n");
+                                }
+                                break;
+                            }
+                        }
+                        Invoke((MethodInvoker)delegate
+                        {
+                            DisplayData(text); // Safely update the UI from the UI thread
+                        });
+                    }
+                } else if (checkLoadMessage(inData))
                 {
                     Invoke((MethodInvoker)delegate
                     {
@@ -296,17 +348,37 @@ namespace WindowsAppCanalyzer
             if (comReady)
             {
                 comReady = false;
-                if (mySerialPort != null)
-                {
-                    if (mySerialPort.IsOpen)
-                    {
-                        mySerialPort.DataReceived -= mySerialPort_DataReceived;
-                        mySerialPort.Close();
-                    }
-                    mySerialPort.Dispose(); // Optional based on your application needs
-                }
 
+                if (mySerialPort != null && mySerialPort.IsOpen)
+                {
+                    // Invoke serial port closing operation on the UI thread
+                    Invoke((MethodInvoker)delegate
+                    {
+                        try
+                        {
+                            // Close the serial port
+                            mySerialPort.Close();
+                            MessageBox.Show("Serial port closed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Handle any exceptions that may occur during serial port close
+                            MessageBox.Show($"Error closing serial port: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            // Dispose of the serial port (optional based on your application needs)
+                            mySerialPort.Dispose();
+                            mySerialPort = null; // Set to null after disposal (optional)
+                        }
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Serial port is not open.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
+
     }
 }

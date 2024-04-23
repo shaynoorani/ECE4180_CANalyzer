@@ -48,34 +48,38 @@
             // comboBoxCOMPorts
             // 
             this.comboBoxCOMPorts.FormattingEnabled = true;
-            this.comboBoxCOMPorts.Location = new System.Drawing.Point(580, 40);
+            this.comboBoxCOMPorts.Location = new System.Drawing.Point(516, 32);
+            this.comboBoxCOMPorts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCOMPorts.Name = "comboBoxCOMPorts";
-            this.comboBoxCOMPorts.Size = new System.Drawing.Size(160, 28);
+            this.comboBoxCOMPorts.Size = new System.Drawing.Size(143, 24);
             this.comboBoxCOMPorts.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(413, 433);
+            this.textBox1.Location = new System.Drawing.Point(344, 606);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 26);
+            this.textBox1.Size = new System.Drawing.Size(277, 22);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "MESSAGE";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 433);
+            this.textBox2.Location = new System.Drawing.Point(206, 606);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 26);
+            this.textBox2.Size = new System.Drawing.Size(76, 22);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "CAN ID";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(873, 423);
+            this.button1.Location = new System.Drawing.Point(705, 591);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 46);
+            this.button1.Size = new System.Drawing.Size(88, 37);
             this.button1.TabIndex = 4;
             this.button1.Text = "SEND";
             this.button1.UseVisualStyleBackColor = true;
@@ -84,16 +88,18 @@
             // comboBoxBaudRates
             // 
             this.comboBoxBaudRates.FormattingEnabled = true;
-            this.comboBoxBaudRates.Location = new System.Drawing.Point(774, 40);
+            this.comboBoxBaudRates.Location = new System.Drawing.Point(688, 32);
+            this.comboBoxBaudRates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxBaudRates.Name = "comboBoxBaudRates";
-            this.comboBoxBaudRates.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxBaudRates.Size = new System.Drawing.Size(108, 24);
             this.comboBoxBaudRates.TabIndex = 5;
             // 
             // dbcButton
             // 
-            this.dbcButton.Location = new System.Drawing.Point(31, 25);
+            this.dbcButton.Location = new System.Drawing.Point(28, 20);
+            this.dbcButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dbcButton.Name = "dbcButton";
-            this.dbcButton.Size = new System.Drawing.Size(107, 56);
+            this.dbcButton.Size = new System.Drawing.Size(95, 45);
             this.dbcButton.TabIndex = 6;
             this.dbcButton.Text = "DBC FILE";
             this.dbcButton.UseVisualStyleBackColor = true;
@@ -101,9 +107,10 @@
             // 
             // Serial
             // 
-            this.Serial.Location = new System.Drawing.Point(910, 34);
+            this.Serial.Location = new System.Drawing.Point(809, 27);
+            this.Serial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Serial.Name = "Serial";
-            this.Serial.Size = new System.Drawing.Size(100, 39);
+            this.Serial.Size = new System.Drawing.Size(89, 31);
             this.Serial.TabIndex = 7;
             this.Serial.Text = "Connect";
             this.Serial.UseVisualStyleBackColor = true;
@@ -112,9 +119,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(611, 9);
+            this.label1.Location = new System.Drawing.Point(543, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "COM PORT";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -122,27 +129,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(790, 9);
+            this.label2.Location = new System.Drawing.Point(702, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(71, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Baud Rate";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(189, 37);
+            this.progressBar1.Location = new System.Drawing.Point(168, 30);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(368, 31);
+            this.progressBar1.Size = new System.Drawing.Size(327, 25);
             this.progressBar1.TabIndex = 10;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(325, 9);
+            this.label4.Location = new System.Drawing.Point(289, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "CAN Load";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -150,27 +158,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(329, 75);
+            this.label3.Location = new System.Drawing.Point(292, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Load  0%";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxSerialData
             // 
-            this.textBoxSerialData.Location = new System.Drawing.Point(189, 117);
+            this.textBoxSerialData.Location = new System.Drawing.Point(168, 94);
+            this.textBoxSerialData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSerialData.Name = "textBoxSerialData";
-            this.textBoxSerialData.Size = new System.Drawing.Size(616, 271);
+            this.textBoxSerialData.Size = new System.Drawing.Size(548, 493);
             this.textBoxSerialData.TabIndex = 14;
             this.textBoxSerialData.Text = "";
             this.textBoxSerialData.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(820, 307);
+            this.button2.Location = new System.Drawing.Point(729, 246);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 35);
+            this.button2.Size = new System.Drawing.Size(90, 28);
             this.button2.TabIndex = 15;
             this.button2.Text = "Run";
             this.button2.UseVisualStyleBackColor = true;
@@ -178,9 +188,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(820, 348);
+            this.button3.Location = new System.Drawing.Point(729, 278);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 40);
+            this.button3.Size = new System.Drawing.Size(90, 32);
             this.button3.TabIndex = 16;
             this.button3.Text = "Stop";
             this.button3.UseVisualStyleBackColor = true;
@@ -188,10 +199,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1028, 489);
+            this.ClientSize = new System.Drawing.Size(914, 639);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxSerialData);
@@ -207,6 +218,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBoxCOMPorts);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "CANalyzer";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -8,3 +8,15 @@ C:\Users\shayn\OneDrive\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\W
 C:\Users\shayn\OneDrive\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.csproj.CoreCompileInputs.cache
 C:\Users\shayn\OneDrive\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.exe
 C:\Users\shayn\OneDrive\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.pdb
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\bin\Debug\WindowsAppCanalyzer.exe.config
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\bin\Debug\WindowsAppCanalyzer.exe
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\bin\Debug\WindowsAppCanalyzer.pdb
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.csproj.AssemblyReference.cache
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.Form1.resources
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.Properties.Resources.resources
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.csproj.GenerateResource.cache
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.csproj.CoreCompileInputs.cache
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.exe
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsAppCanalyzer.pdb
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\bin\Debug\DbcParserLib.dll
+C:\Users\Eric\Documents\GitHub\ECE4180_CANalyzer\WindowsAppCanalyzer\WindowsAppCanalyzer\obj\Debug\WindowsA.6935FD2A.Up2Date
