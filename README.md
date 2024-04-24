@@ -6,6 +6,9 @@
 
 
 ## Description
+- CAN analyzers are really expensive for what they do the leading CAN analyzer is over 500 Dollars
+- ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/113149316/f83826cb-b818-4b06-8bd9-2c6e2857e564)
+- Their software only allows you to see the raw values of the CAN messaages and CAN load
 - CAN Line Analyzer for easy access to CAN data
 - Simple C#-based GUI
    - Can filter based on CAN message ID
