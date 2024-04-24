@@ -10,7 +10,7 @@
 - Simple C#-based GUI
    - Can filter based on CAN message ID
 - Calculates and displays CAN Load
-[<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
+![image](https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/functionaloverview.png?raw=true)
 
 ## Functionality Demo
 [<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/6230bc35-f6be-4f16-86ee-17178f3d6d57">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
@@ -68,6 +68,7 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 
 ### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
 - This code handles CAN passthrough using Serial and the logic for calculating load in 10ms intervals.
+
 ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75)
 
 
