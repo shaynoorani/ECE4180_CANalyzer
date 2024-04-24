@@ -10,6 +10,7 @@
 - Simple C#-based GUI
    - Can filter based on CAN message ID
 - Calculates and displays CAN Load
+
 ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/functionaloverview.png?raw=true)
 
 ## Functionality Demo
@@ -87,6 +88,7 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 - Select DBC
 - (Optional) Select ID Filter
 - Connect/Run and Stop when necessary
+
 ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/afa03a9c-7c5d-4ef2-ae30-ab9c8ad74eee)
 
 
