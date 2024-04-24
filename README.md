@@ -60,28 +60,26 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
   - Sturdy but also allows for replacement of Mbed or other components
 
 ## Software
-- The Software is broken up into three key units: the Mbed-based CAN load calculator and CAN message passthrough, the C#-based DBC Message parser, and the C# GUI.
+- The Software is broken up into two key units: the Mbed-based CAN load calculator with CAN message passthrough and the C#-based DBC Message parser with the C# GUI.
 - The messages are first read across a serial connection from the CAN transducer to the mbed where they are either tallied to calculate CAN load or passed-through the USB virtual COM port to the computer for use in the DBC Parser and Gui
 - The DBC parser reads the CAN messages sent by the mbed and packages them in structs that delineate the messages and segments the data into the message components
 - Finally, the GUI displays the CAN message in an easily read format
 
-### Mbed - CAN Load Calculator & Message Passthrough
+### [Mbed - CAN Load Calculator & Message Passthrough]
+(https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
 ! Andy's Code - highlight sections of code if necessary/beneficial, describe functionality, and especially mention how it avoids losing parts of CAN messages through calculation and sending cycles.
-
-### [DBC Parser](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/DBCParserTest)
-! Eric's Parser (probably just highlight functionality and then link to the code if it is long)
 
 ### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
 ! Shay's GUI Code (probably just highlight functionality and then link to the code if it is long)
 
 ## Usage
-! POPULATE WITH HOW TO USE THE CANalyzer
+- Select COM Port
+- Select Baud Rate
+- Select DBC
+- (Optional) Select ID Filter
+- Connect/Run and Stop when necessary
+![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/afa03a9c-7c5d-4ef2-ae30-ab9c8ad74eee)
+
 
 ### Using C# in VS with Github
-If you want to add or make changes in Visual Studio for the C# to Github you should 
-Follow the following instructions:
-
-The issue can be worked around by deleting “C:\Program Files\Microsoft Visual Studio\2022[Community\Pro\Enterprise]\Common7\IDE\CommonExtensions\Microsoft\Editor\ServiceHub\Indexing.servicehub.service.json” file and restarting Visual Studio.
-
-
 Link to the page on github pages: https://shaynoorani.github.io/ECE4180_CANalyzer/
