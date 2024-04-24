@@ -1,17 +1,18 @@
-I was somewhat modeling ours off of this one: https://github.com/MufuteeVC/web-programmable-dslr-intervalometer and in general the other ones on Hamblen's sight: https://hamblen.ece.gatech.edu/489X/projects/S19_projs.htm
-
 # CANalyzer - Frugal CAN Line Analyzer with a C# GUI
 - Brendan Bassett, Carl Cort, Eric Galluzi, Shayan Noorani, Tiancheng Zhao
 - Throughout this page, there are links to the section of the main github repo [shaynoorani/ECE4180_CANalyzer](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main) that correspond to the given component. Navigate to those to see the exact implementations
 
+<img width="400" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/7faa5a21-4a88-4b69-bc6e-8f2c1a3e5df8">
+
+
 ## Description
 - CAN Line Analyzer for easy access to CAN data
 - Simple C#-based GUI
-   - ! Can filter based on CAN message ID - Only if we end up implementing this !
+   - Can filter based on CAN message ID
 - Calculates and displays CAN Load
 
 ## Functionality Demo
-
+[<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/6230bc35-f6be-4f16-86ee-17178f3d6d57">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
 
 ## Hardware
 ### Parts
@@ -46,10 +47,7 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 #### Final Housing Design
 <img alt="" width="650px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing/Yellow%20CANalyzer%20Housing.png?raw=true">
 <img alt="" width="650px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/Housing/Yellow%20CANalyzer%20Housing%20Front%20Removed.png?raw=true">
-
-! Replacing Pic Below with Better Final One !
-
-<img alt="" width="650px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/9aa29d5c-033b-4265-8949-279baec2c5d9">
+<img alt="" width="650px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/9cb02d9d-4a11-4481-a3b3-0134888d4d83">
 
 - Two 3D printed components (PLA on the Bambu printers at the HIVE)
 - Front plate
