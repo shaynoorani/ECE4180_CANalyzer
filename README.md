@@ -67,14 +67,19 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 
 ### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
 This code handles CAN passthrough using Serial and the logic for calculating load.
-For calculating load: bits measured during time interval (10ms) / (CAN Freq
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-For calculating load over 10ms intervals = 
+![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75)
+
 
 
 ### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
 ! Shay's GUI Code 
-(probably just highlight functionality and then link to the code if it is long)
+- The C# GUI & Parser reads in Serial Data and differentiates between load messages and CAN messages sent as an ID + Data Frame
+- load is displayed on a progress bar at the top.
+- User is given the option to select a DBC, COM Port, and Baud Rate
+- The program uses the [DBCParserLib](https://github.com/EFeru/DbcParser) to parse and display live decoded data.
+- A filter option is included to facilitate analysis.
+
 
 ## Usage
 - Select COM Port
