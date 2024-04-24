@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "WindowsAppCanalyzer\\Form1.cs",
               "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs",
-              "ViewState": "AQIAACEBAAAAAAAAAAAwwDgBAAAjAAAA",
+              "ViewState": "AQIAABwBAAAAAAAAAAAswCUBAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T16:16:55.63Z",
               "IsPinned": true,
@@ -51,8 +51,7 @@
               "ToolTip": "C:\\Users\\Eric\\Documents\\GitHub\\ECE4180_CANalyzer\\WindowsAppCanalyzer\\WindowsAppCanalyzer\\Form1.cs [Design]",
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:59:57.196Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-08T15:59:57.196Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "WindowsAppCanalyzer\\Form1.Designer.cs",
               "ViewState": "AQIAAKAAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T01:39:07.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T01:39:07.975Z"
             }
           ]
         }
