@@ -65,12 +65,16 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 - The DBC parser reads the CAN messages sent by the mbed and packages them in structs that delineate the messages and segments the data into the message components
 - Finally, the GUI displays the CAN message in an easily read format
 
-### [Mbed - CAN Load Calculator & Message Passthrough]
-(https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
-! Andy's Code - highlight sections of code if necessary/beneficial, describe functionality, and especially mention how it avoids losing parts of CAN messages through calculation and sending cycles.
+### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
+This code handles CAN passthrough using Serial and the logic for calculating load.
+For calculating load: bits measured during time interval (10ms) / (CAN Freq
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 ### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
-! Shay's GUI Code (probably just highlight functionality and then link to the code if it is long)
+! Shay's GUI Code 
+(probably just highlight functionality and then link to the code if it is long)
 
 ## Usage
 - Select COM Port
