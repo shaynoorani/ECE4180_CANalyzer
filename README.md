@@ -34,7 +34,7 @@
 #### Wiring Diagram
 <img width="630" alt="Wiring Diagram" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/b021f11a-1659-4db7-b5f6-4b5727ba3e97">
 
-Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for that device however the wires directly from the mbed go through the SOP14 breakout. The maping for the TCAN105 pins to the SOP14 pins are TCAN105(1-4) -> SOP14(1-4) and TCAN105(5-8) -> SOP14(11-14). This can be seen in the realworld image below.
+Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for that device. However, the wires directly from the mbed go through the SOP14 breakout. The maping for the TCAN105 pins to the SOP14 pins are TCAN105(1-4) -> SOP14(1-4) and TCAN105(5-8) -> SOP14(11-14). This can be seen in the realworld image below.
 
 #### Closeup of the Electronics
 <img alt="Closeup of the final electronics" width="400px" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/d91efa1b-e216-4a97-999b-a9c67850fe88">
@@ -67,23 +67,23 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 
 
 ## Software
-- The Software is broken up into two key units: the Mbed-based CAN load calculator with CAN message passthrough and the C#-based DBC Message parser with the C# GUI
+- The Software is broken up into two key units: 1.) the Mbed-based CAN load calculator with CAN message passthrough and 2.) the C#-based DBC Message parser with the C# GUI
 - The messages are first read across a serial connection from the CAN transducer to the mbed where they are either tallied to calculate CAN load or passed-through the USB virtual COM port to the computer for use in the DBC Parser and Gui
 - The DBC parser reads the CAN messages sent by the mbed and packages them in structs that delineate the messages and segments the data into the message components
 - Finally, the GUI displays the CAN message in an easily read format
 
 ### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
-- This code handles CAN passthrough using Serial communication with the CAN transducer and and the computer via the virtual COM port
+- Handles CAN passthrough using Serial communication with the CAN transducer and and the computer via the virtual COM port
 - Also manages the logic for calculating the load in 10ms intervals
 - The CAN load is calculated according to the following equation:
 
-<img width="300" alt="load" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75">
+<img width="200" alt="load" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75">
 
 
 
-### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
-- The C# GUI & Parser reads in Serial Data and differentiates between load messages and CAN messages sent as an ID + Data Frame
-- load is displayed on a progress bar at the top
+### [GUI & DBC Parser](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
+- The C# GUI & Parser reads in the serial data from the Mbed and differentiates between load messages and CAN messages sent as an ID + Data Frame
+- Load is displayed on a progress bar at the top
 - User is given the option to select a DBC, COM Port, and Baud Rate
 - The program uses the [DBCParserLib](https://github.com/EFeru/DbcParser) to parse and display live decoded data.
 - A filter option is included to facilitate analysis
