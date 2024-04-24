@@ -6,9 +6,6 @@
 
 
 ## Description
-- CAN analyzers are really expensive for what they do the leading CAN analyzer is over 500 Dollars
-- ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/113149316/f83826cb-b818-4b06-8bd9-2c6e2857e564)
-- Their software only allows you to see the raw values of the CAN messaages and CAN load
 - CAN Line Analyzer for easy access to CAN data
 - Simple C#-based GUI
    - Can filter based on CAN message ID
@@ -19,6 +16,8 @@
 ## Functionality Demo
 [<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/6230bc35-f6be-4f16-86ee-17178f3d6d57">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
 
+
+
 ## Hardware
 ### Parts
 - (x1) [Mbed](https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/general-purpose-mcus/lpc1700-arm-cortex-m3/arm-mbed-lpc1768-board:OM11043)
@@ -28,6 +27,7 @@
 - [Breadboard](https://www.digikey.com/en/products/detail/universal-solder-electronics-ltd/SOLDERLESS%2520BREADBOARD%2520400/16819785?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax_DK%2BProduct_Product%20Categories%20-%20Top%2015&utm_term=&utm_content=&utm_id=go_cmp-19646629144_adg-_ad-__dev-c_ext-_prd-16819785_sig-Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB&gad_source=1&gclid=Cj0KCQjwlZixBhCoARIsAIC745Dwae0ZVhIv94k09Ht68xdOZ6aSgnMd-k5QA9iUPgV3ZDevFuUz87YaAqLCEALw_wcB)
 - Housing (optional)
 - Male Molex Connector (optional)
+
 
 ### [Electronics](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/schematic)
 
@@ -64,25 +64,29 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 - Connected by M4 screws with a locking not pressure fit into the main housing side
   - Sturdy but also allows for replacement of Mbed or other components
 
+
+
 ## Software
-- The Software is broken up into two key units: the Mbed-based CAN load calculator with CAN message passthrough and the C#-based DBC Message parser with the C# GUI.
+- The Software is broken up into two key units: the Mbed-based CAN load calculator with CAN message passthrough and the C#-based DBC Message parser with the C# GUI
 - The messages are first read across a serial connection from the CAN transducer to the mbed where they are either tallied to calculate CAN load or passed-through the USB virtual COM port to the computer for use in the DBC Parser and Gui
 - The DBC parser reads the CAN messages sent by the mbed and packages them in structs that delineate the messages and segments the data into the message components
 - Finally, the GUI displays the CAN message in an easily read format
 
 ### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
-- This code handles CAN passthrough using Serial and the logic for calculating load in 10ms intervals.
+- This code handles CAN passthrough using Serial communication with the CAN transducer and and the computer via the virtual COM port
+- Also manages the logic for calculating the load in 10ms intervals
+- The CAN load is calculated according to the following equation:
 
-<img width="400" alt="load" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75">
+<img width="300" alt="load" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75">
 
 
 
 ### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
 - The C# GUI & Parser reads in Serial Data and differentiates between load messages and CAN messages sent as an ID + Data Frame
-- load is displayed on a progress bar at the top.
+- load is displayed on a progress bar at the top
 - User is given the option to select a DBC, COM Port, and Baud Rate
 - The program uses the [DBCParserLib](https://github.com/EFeru/DbcParser) to parse and display live decoded data.
-- A filter option is included to facilitate analysis.
+- A filter option is included to facilitate analysis
 
 
 ## Usage
