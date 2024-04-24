@@ -1,6 +1,6 @@
 # CANalyzer - Frugal CAN Line Analyzer with a C# GUI
 - Brendan Bassett, Carl Cort, Eric Galluzi, Shayan Noorani, Tiancheng Zhao
-- Throughout this page, there are links to the section of the main github repo [shaynoorani/ECE4180_CANalyzer](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main) that correspond to the given component. Navigate to those to see the exact implementations
+- Throughout this page, there are links to the section of the main github repo [shaynoorani/ECE4180_CANalyzer](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/functionaloverview.png) that correspond to the given component. Navigate to those to see the exact implementations
 
 <img width="400" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/7faa5a21-4a88-4b69-bc6e-8f2c1a3e5df8">
 
@@ -10,6 +10,7 @@
 - Simple C#-based GUI
    - Can filter based on CAN message ID
 - Calculates and displays CAN Load
+[<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/blob/main/">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
 
 ## Functionality Demo
 [<img width="500" alt="Team Picture" src="https://github.com/shaynoorani/ECE4180_CANalyzer/assets/124218592/6230bc35-f6be-4f16-86ee-17178f3d6d57">](https://youtu.be/kEs1tA9cYeo?si=FgBFabkiXCYflOZx)
@@ -66,14 +67,12 @@ Note: the TCAN105 is the SMD CAN transducer itself and the wiring shown is for t
 - Finally, the GUI displays the CAN message in an easily read format
 
 ### [Mbed - CAN Load Calculator & Message Passthrough](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/main.cpp)
-This code handles CAN passthrough using Serial and the logic for calculating load.
--For calculating load over 10ms intervals = 
+- This code handles CAN passthrough using Serial and the logic for calculating load in 10ms intervals.
 ![image](https://github.com/shaynoorani/ECE4180_CANalyzer/assets/92798736/7f4b9f97-6d0b-45e1-b23b-9e4c7eca3a75)
 
 
 
 ### [GUI](https://github.com/shaynoorani/ECE4180_CANalyzer/tree/main/WindowsAppCanalyzer)
-! Shay's GUI Code 
 - The C# GUI & Parser reads in Serial Data and differentiates between load messages and CAN messages sent as an ID + Data Frame
 - load is displayed on a progress bar at the top.
 - User is given the option to select a DBC, COM Port, and Baud Rate
